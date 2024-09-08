@@ -17,7 +17,7 @@ all: firmware.elf
 hello.txt:
 	echo "hello world!" > hello.txt
 clean:
-	rm -f main.i hello.txt main.o
+	rm -f main.i main.s hello.txt main.o firmware.elf
 .PHONY : clean all
 
 
