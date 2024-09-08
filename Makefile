@@ -1,10 +1,12 @@
 PICO_TOOLCHAIN_PATH ?= ~/.pico-sdk/toolchain/13_2_Rel1
-SRC=main.c
 CPP=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-cpp
 LD=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-ld
 CC=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-gcc
 AS=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-as
+SRC=main.c
 OBJS=$(patsubst %.c,%.o,$(SRC))
+all: firmware.elf
+
 main.i : main.c
 	$(CPP) main.c > main.i
 main.s: main.i
@@ -13,7 +15,6 @@ main.s: main.i
 	$(AS) $< -o $@
 firmware.elf: $(OBJS)
 	$(LD) -o $@ $^
-all: firmware.elf
 hello.txt:
 	echo "hello world!" > hello.txt
 clean:
