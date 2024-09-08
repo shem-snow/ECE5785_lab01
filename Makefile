@@ -1,4 +1,4 @@
-PICO_TOOLCHAIN_PATH=/
+PICO_TOOLCHAIN_PATH=.pico-sdk
 SRC=main.c
 CPP=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-cpp
 LD=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-ld
