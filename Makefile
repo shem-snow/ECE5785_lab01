@@ -1,10 +1,10 @@
 PICO_TOOLCHAIN_PATH= .pico-sdk
 SRC=main.c
-OBJS=$(patsubst %.c,%.o,$(SRC))
 CPP=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-cpp
 LD=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-ld
 CC=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-gcc
 AS=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-as
+OBJS=$(patsubst %.c,%.o,$(SRC))
 main.i : main.c
 	$(CPP) main.c > main.i
 main.s: main.i
