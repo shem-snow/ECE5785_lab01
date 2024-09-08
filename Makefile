@@ -1,4 +1,4 @@
-PICO_TOOLCHAIN_PATH=usr
+PICO_TOOLCHAIN_PATH=/usr
 SRC=main.c
 CPP=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-cpp
 LD=$(PICO_TOOLCHAIN_PATH)/bin/arm-none-eabi-ld
